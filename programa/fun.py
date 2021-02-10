@@ -23,6 +23,7 @@ class Proyectil:
 
     def make_path(self,ax):
         self.path, = ax.plot(self.x,self.y,'ro-',color=f'{self.color}')
+        self.line, = ax.plot(self.x,self.y,'r--',color=f'{self.color}')
 
     def set_xy(self,nx,ny):
         self.x = nx
@@ -38,7 +39,8 @@ class Proyectil:
         self.y = 0 + self.vy*(self.t) + 0.5*self.ay*((self.t)**2)
 
     def update_pos(self,frame):
-        self.path.set_data((self.x[:frame],self.y[:frame]))
+        self.path.set_data((self.x[frame],self.y[frame]))
+        self.line.set_data((self.x[:frame],self.y[:frame]))
 
     def make_some_limits(self):
         t_max = 2*self.v0*sin(radians(self.theta))/g

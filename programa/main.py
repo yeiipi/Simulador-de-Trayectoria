@@ -1,13 +1,12 @@
 from fun import *
 
 
-
 def main():
-    p1 = Proyectil(2.2,15,'r')
-    p2 = Proyectil(2.2,30,'g')
-    p3 = Proyectil(2.2,45,'b')
-    p4 = Proyectil(2.2,60,'c')
-    p5 = Proyectil(2.2,90,'m')
+    p1 = Proyectil(22,15,'r')
+    p2 = Proyectil(22,30,'g')
+    p3 = Proyectil(22,45,'b')
+    p4 = Proyectil(22,60,'c')
+    p5 = Proyectil(22,90,'m')
 
     proyectiles = [p1,p2,p3,p4,p5]
     MAX_T,MAX_Y,MAX_X = MAXMAXMAX(proyectiles)
