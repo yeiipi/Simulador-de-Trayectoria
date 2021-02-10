@@ -1,39 +1,39 @@
 from fun import *
 
-clock = pg.time.Clock()
-FPS = 30
-
-pg.init()
-
-# dimensiones
-d_width = 800
-d_height= 800
-
-# colores
-transparent = (0,0,0,0)
-white = (255,255,255, 155)
-black = (0,0,0, 255)
-
-light_pink = (255, 173, 173)
-deep_champagne = (255, 214, 165)
-lemon_yellow = (253, 255, 182)
-tea_green = (202, 255, 191)
-celeste = (155, 246, 255)
-mauve = (255, 198, 255)
-
-
-
-win = pg.display.set_mode((d_width,d_height))
-pg.display.set_caption('Simulación tiro parabólico')
 
 
 def main():
-    while True:
+    p1 = Proyectil(2.2,15,'r')
+    p2 = Proyectil(2.2,30,'g')
+    p3 = Proyectil(2.2,45,'b')
+    p4 = Proyectil(2.2,60,'c')
+    p5 = Proyectil(2.2,90,'m')
 
-        for event in pg.event.get():
-            if event.type == pg.QUIT:
-                pg.quit()
-                quit()
+    proyectiles = [p1,p2,p3,p4,p5]
+    MAX_T = 0
+    MAX_Y = 0
+    MAX_X = 0
+
+    for i in proyectiles:
+        t,y,x = i.make_some_limits()
+        if t > MAX_T:
+            MAX_T = t
+        if y > MAX_Y:
+            MAX_Y = y
+        if x > MAX_X:
+            MAX_X = x
+
+
+    fig, ax, t = HelloWorld(MAX_T,MAX_Y,MAX_X)
+
+
+    for i in proyectiles:
+        i.set_t(t)
+        i.make_path(ax)
+
+
+    anim = animation.FuncAnimation(fig,el_alma_de_la_fiesta,frames=len(t),fargs=proyectiles)
+    plt.show()
 
 
 
