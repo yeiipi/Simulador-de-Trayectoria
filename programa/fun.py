@@ -22,7 +22,7 @@ class Proyectil:
         return f'({self.x,self.y})'
 
     def make_path(self,ax):
-        self.path, = ax.plot(self.x,self.y,'ro-',color=f'{self.color}')
+        self.path, = ax.plot(self.x,self.y,'ro-',color=f'{self.color}', label=f'{self.theta}°/v:{self.v0}')
         self.line, = ax.plot(self.x,self.y,'r--',color=f'{self.color}')
 
     def set_xy(self,nx,ny):
@@ -39,6 +39,7 @@ class Proyectil:
         self.y = 0 + self.vy*(self.t) + 0.5*self.ay*((self.t)**2)
 
     def update_pos(self,frame):
+        self.frame = frame
         self.path.set_data((self.x[frame],self.y[frame]))
         self.line.set_data((self.x[:frame],self.y[:frame]))
 
@@ -70,7 +71,7 @@ def HelloWorld(t_max:float,y_max:float,x_max:float):
     ax.set_ylabel('distancia en y')
     ax.grid()
 
-    t = np.linspace(0,t_max)
+    t = np.linspace(0,t_max,num=240)
     return fig, ax, t
 
 def MAXMAXMAX(proyectiles):
