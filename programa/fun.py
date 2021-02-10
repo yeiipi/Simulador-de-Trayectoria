@@ -24,10 +24,6 @@ class Proyectil:
     def make_path(self,ax):
         self.path, = ax.plot(self.x,self.y,'ro-',color=f'{self.color}')
 
-
-    def update_x(self,frame):
-        self.x = self.x + self.vx*(frame/len(self.t)) + 0.5*self.ax*((frame/len(self.t))**2)
-
     def set_xy(self,nx,ny):
         self.x = nx
         self.y = ny
@@ -35,17 +31,14 @@ class Proyectil:
     def set_t(self,t):
         self.t = t
 
-    def update_y(self,frame):
-        self.y = self.y + self.vy*(frame/len(self.t)) + 0.5*self.ay*((frame/len(self.t))**2)
+    def update_x(self):
+        self.x = 0 + self.vx*(self.t) + 0.5*self.ax*((self.t)**2)
+
+    def update_y(self):
+        self.y = 0 + self.vy*(self.t) + 0.5*self.ay*((self.t)**2)
 
     def update_pos(self,frame):
-        if ( frame == 0 ):
-            self.set_xy(0,0)
-        else:
-            self.update_x(frame)
-            self.update_y(frame)
-
-        self.path.set_data((self.x,self.y))
+        self.path.set_data((self.x[:frame],self.y[:frame]))
 
     def make_some_limits(self):
         t_max = 2*self.v0*sin(radians(self.theta))/g
@@ -70,7 +63,7 @@ def HelloWorld(t_max:float,y_max:float,x_max:float):
     ====================
     """
     fig, ax = plt.subplots()
-    ax = plt.axes(autoscale_on=True, xlim=(0,x_max*25.5), ylim=(0,y_max*25.5))
+    ax = plt.axes(autoscale_on=True, xlim=(0,x_max*1.2), ylim=(0,y_max*1.2))
     ax.set_xlabel('distancia en x')
     ax.set_ylabel('distancia en y')
     ax.grid()
@@ -78,8 +71,25 @@ def HelloWorld(t_max:float,y_max:float,x_max:float):
     t = np.linspace(0,t_max)
     return fig, ax, t
 
+def MAXMAXMAX(proyectiles):
+    MAX_T = 0
+    MAX_Y = 0
+    MAX_X = 0
+    for i in proyectiles:
+        t,y,x = i.make_some_limits()
+        if t > MAX_T:
+            MAX_T = t
+        if y > MAX_Y:
+            MAX_Y = y
+        if x > MAX_X:
+            MAX_X = x
+
+    return MAX_T,MAX_Y,MAX_X
+
+
+
+
 def el_alma_de_la_fiesta(frame,*args):
-    print(frame)
     for i in args:
         i.update_pos(frame)
     return args

@@ -10,25 +10,15 @@ def main():
     p5 = Proyectil(2.2,90,'m')
 
     proyectiles = [p1,p2,p3,p4,p5]
-    MAX_T = 0
-    MAX_Y = 0
-    MAX_X = 0
-
-    for i in proyectiles:
-        t,y,x = i.make_some_limits()
-        if t > MAX_T:
-            MAX_T = t
-        if y > MAX_Y:
-            MAX_Y = y
-        if x > MAX_X:
-            MAX_X = x
-
+    MAX_T,MAX_Y,MAX_X = MAXMAXMAX(proyectiles)
 
     fig, ax, t = HelloWorld(MAX_T,MAX_Y,MAX_X)
 
 
     for i in proyectiles:
         i.set_t(t)
+        i.update_x()
+        i.update_y()
         i.make_path(ax)
 
 
