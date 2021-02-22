@@ -16,5 +16,37 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{Weisstein}{article}{}
+      \name{author}{1}{}{%
+        {{hash=819197bfeff32a3f58d49b2a3eb0a580}{%
+           family={Weisstein},
+           familyi={W\bibinitperiod},
+           given={Eric\bibnamedelima W.},
+           giveni={E\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{819197bfeff32a3f58d49b2a3eb0a580}
+      \strng{fullhash}{819197bfeff32a3f58d49b2a3eb0a580}
+      \strng{bibnamehash}{819197bfeff32a3f58d49b2a3eb0a580}
+      \strng{authorbibnamehash}{819197bfeff32a3f58d49b2a3eb0a580}
+      \strng{authornamehash}{819197bfeff32a3f58d49b2a3eb0a580}
+      \strng{authorfullhash}{819197bfeff32a3f58d49b2a3eb0a580}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{MathWorld}
+      \field{title}{{Double-Angle Formulas}}
+      \verb{urlraw}
+      \verb https://mathworld.wolfram.com/Double-AngleFormulas.html
+      \endverb
+      \verb{url}
+      \verb https://mathworld.wolfram.com/Double-AngleFormulas.html
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 

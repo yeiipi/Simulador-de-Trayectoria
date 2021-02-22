@@ -7,12 +7,12 @@ def main():
     col2 = [ '#8CB369', '#C0CB77', '#DAC773', '#f4c26f', '#f4a259', '#d87755']
     col3 = [ '#40A98C', '#7FC0AA', '#FFDF73', '#F7A04B', '#F95045', '#D7E661']
 
-    p1 = Proyectil(22,15,col1[0])
-    p2 = Proyectil(22,30,col1[1])
-    p3 = Proyectil(22,45,col1[2])
-    p4 = Proyectil(22,60,col1[3])
-    p5 = Proyectil(22,75,col1[4])
-    p6 = Proyectil(22,90,col1[5])
+    p1 = Proyectil(3,15,col1[0])
+    p2 = Proyectil(3,30,col1[1])
+    p3 = Proyectil(3,45,col1[2])
+    p4 = Proyectil(3,60,col1[3])
+    p5 = Proyectil(3,75,col1[4])
+    p6 = Proyectil(3,90,col1[5])
 
     proyectiles = [p1,p2,p3,p4,p5,p6]
     MAX_T,MAX_Y,MAX_X = MAXMAXMAX(proyectiles)

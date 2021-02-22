@@ -70,8 +70,9 @@
 % REFERENCES & CITES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \usepackage{cite}
-
+\usepackage[backend=biber]{biblatex}
+\addbibresource{referencias.bib}
+\usepackage{csquotes}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % EXTRA PACKAGES
@@ -93,10 +94,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DOCUMENT PROPERTIES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parskip}{1em}
+\setlength{\parindent}{2em}
+\renewcommand{\baselinestretch}{1.2}
 \usepackage[pdftex]{hyperref}
 \AtBeginDocument{\hypersetup{
             pdftitle={Elementos de la Física | Simulación de Tiro Parabólico}, % TÍTULO DEL DOCUMENTO
             pdfauthor={Rodrigo Castillo Camargo, Juan Pablo Sierra}, % AUTORES
-            pdfsubject={\today}, % ASUNTO
+            pdfsubject={}, % ASUNTO
             pdfkeywords={}, % PALABRAS CLAVE
             bookmarksnumbered, hidelinks}}

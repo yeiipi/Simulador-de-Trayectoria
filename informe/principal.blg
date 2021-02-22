@@ -1,9 +1,16 @@
-[0] Config.pm:304> INFO - This is Biber 2.14 (beta)
-[0] Config.pm:307> INFO - Logfile is 'principal.blg'
-[280] biber:322> INFO - === lun ago 24, 2020, 20:29:54
-[322] Biber.pm:415> INFO - Reading 'principal.bcf'
-[565] Biber.pm:943> INFO - Found 0 citekeys in bib section 0
-[579] Utils.pm:293> WARN - The file 'principal.bcf' does not contain any citations!
-[597] bbl.pm:652> INFO - Writing 'principal.bbl' with encoding 'UTF-8'
-[597] bbl.pm:755> INFO - Output to principal.bbl
-[598] Biber.pm:128> INFO - WARNINGS: 1
+[5] Config.pm:304> INFO - This is Biber 2.14 (beta)
+[6] Config.pm:307> INFO - Logfile is 'principal.blg'
+[584] biber:322> INFO - === lun feb 22, 2021, 14:35:34
+[644] Biber.pm:415> INFO - Reading 'principal.bcf'
+[1099] Biber.pm:943> INFO - Found 1 citekeys in bib section 0
+[1191] Biber.pm:4256> INFO - Processing section 0
+[1192] Utils.pm:75> INFO - Globbing data source 'referencias.bib'
+[1193] Utils.pm:91> INFO - Globbed data source 'referencias.bib' to referencias.bib
+[1295] Biber.pm:4455> INFO - Looking for bibtex format file 'referencias.bib' for section 0
+[1309] bibtex.pm:1653> INFO - LaTeX decoding ...
+[1343] bibtex.pm:1471> INFO - Found BibTeX data source 'referencias.bib'
+[1551] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1552] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1552] Biber.pm:4084> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'es-ES'
+[1713] bbl.pm:652> INFO - Writing 'principal.bbl' with encoding 'UTF-8'
+[1729] bbl.pm:755> INFO - Output to principal.bbl
